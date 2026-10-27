@@ -1,3 +1,12 @@
+/*
+    Program to implement a Doubly Linked List with the following operations:
+    a) Create a Doubly Linked List
+    b) Display the contents of the Doubly Linked List in forward and reverse order
+    c) Insert a node at the beginning of the Doubly Linked List
+    d) Insert a node at the end of the Doubly Linked List
+    e) Insert a node at a specified position in the Doubly Linked List
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 

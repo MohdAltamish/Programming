@@ -1,3 +1,9 @@
+/*
+    Program to add two polynomials using arrays.
+    The user is prompted to enter the degree and coefficients of two polynomials,
+    and the program calculates and displays their sum.
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 

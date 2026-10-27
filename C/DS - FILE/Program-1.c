@@ -1,3 +1,9 @@
+/* Write a C program to create array and perform various operations:
+a) Insertion at:  i) Beg	ii) End	iii) Any position
+b) Deletion from:  i) Beg   ii) End	 iii) Any position       
+c) Display the array
+*/ 
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -39,7 +45,7 @@ void insBeg(int arr[], int n)
     arr[0] = element;
 }
 //Insert At Position
-void insPos(int arr[], int n)
+int insPos(int arr[], int n)
 {
     int element, pos;
 
@@ -52,7 +58,7 @@ void insPos(int arr[], int n)
     if (pos < 1 || pos > n + 1)
     {
         printf("Invalid position!\n");
-        return;
+        return 0;
     }
 
     int idx = pos - 1;
@@ -63,6 +69,7 @@ void insPos(int arr[], int n)
     }
 
     arr[idx] = element;
+    return 1;
 }
 
 //Insert At End
@@ -85,14 +92,13 @@ void delBeg(int arr[], int n)
     }
 }
 
-void delEnd(int arr[], int n)
+void delEnd()
 {
-    /* Decreasing n in main removes the last element */
-    n--;
+    /* Size is decremented in main */
 }
 
 //Delete from Position
-void delPos(int arr[], int n)
+int delPos(int arr[], int n)
 {
     int pos;
 
@@ -102,13 +108,14 @@ void delPos(int arr[], int n)
     if (pos < 1 || pos > n)
     {
         printf("Invalid position!\n");
-        return;
+        return 0;
     }
 
     for (int i = pos - 1; i < n - 1; i++)
     {
         arr[i] = arr[i + 1];
     }
+    return 1;
 }
 
 int main()
@@ -167,10 +174,12 @@ int main()
         case 2:
             if (n < 50)
             {
-                insPos(arr, n);
-                n++;
-                printf("Element inserted at position.\n");
-                output(arr, n);
+                if (insPos(arr, n))
+                {
+                    n++;
+                    printf("Element inserted at position.\n");
+                    output(arr, n);
+                }
             }
             else
             {
@@ -214,7 +223,7 @@ int main()
         case 6:
             if (n > 0)
             {
-                delEnd(arr, n);
+                delEnd();
                 n--;
 
                 printf("Deleted the element from end.\n");
@@ -229,13 +238,12 @@ int main()
         case 7:
             if (n > 0)
             {
-                delPos(arr, n);
-
-                /* n is decreased after successful deletion */
-                n--;
-
-                printf("Deleted the element from position.\n");
-                output(arr, n);
+                if (delPos(arr, n))
+                {
+                    n--;
+                    printf("Deleted the element from position.\n");
+                    output(arr, n);
+                }
             }
             else
             {

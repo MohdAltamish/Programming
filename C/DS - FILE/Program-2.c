@@ -1,3 +1,8 @@
+/* Write a C program to perform matrix operations:
+a) Matrix Multiplication
+b) Difference of Diagonals
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 

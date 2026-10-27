@@ -1,3 +1,9 @@
+/* Write a C program to implement Linked List and perform various operations:
+a) Insertion at:  i) Beg	ii) End	iii) Any position
+b) Deletion from:  i) Beg   ii) End	 iii) Any position       
+c) Display the Linked List
+*/
+
 
 #include <stdio.h>
 #include <stdlib.h>
